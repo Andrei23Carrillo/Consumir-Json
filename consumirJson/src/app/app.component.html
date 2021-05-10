@@ -1,0 +1,17 @@
+<div *ngIf="banderas!=null; else espera">
+  <!--la directiva *ngIf verificamos si la variable banderas tiene un null procedemos a mostrar el contenido de la etiqueta 'ng-template':-->
+  <table style="text-align:center" border="1">
+    <tr>
+      <td>Nombre</td><td>Capital</td><td>Bandera</td>
+    </tr>
+    <tr *ngFor="let art of banderas">
+      <td class="c1">{{art.name}}</td>
+      <td class="c2">{{art.capital}}</td>
+      <td>
+        <img src="{{art.flag}}" alt="">
+      </td>
+    </tr>
+  </table>
+  <!-- Para mostrar los datos de la propiedad 'banderas' -->
+</div>
+<ng-template  #espera>Esperando datos...</ng-template>
